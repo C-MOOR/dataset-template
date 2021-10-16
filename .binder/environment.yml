@@ -1,0 +1,11 @@
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - r-base=4.0
+  - r-tidyverse
+  - r-learnr
+  - r-seurat
+  - bioconductor-scran
+  - bioconductor-scater
+

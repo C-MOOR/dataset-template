@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+# Fix GLIBCXX_3.4.26 error https://discourse.jupyter.org/t/glibcxx-3-4-26-not-found-from-rstudio/7778/7
+export LD_LIBRARY_PATH=${NB_PYTHON_PREFIX}/lib:${LD_LIBRARY_PATH}
+
+exec "$@"
+

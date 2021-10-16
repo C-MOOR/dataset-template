@@ -1,0 +1,53 @@
+---
+title : "R Notebook"
+author: "Author"
+date  : "15 October 2021"
+output: 
+  html_notebook:
+    toc: true
+    toc_float: true
+---
+
+# Summary
+
+- Published as [Voigt et al., 2019](https://pubmed.gov/31075224/)
+- Explore 8217 cells at [cellxgene](https://cellxgene.cziscience.com/collections/7edef704-f63a-462c-8636-4bc86a9472bd)
+
+![](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6596422/bin/nihms-1529793-f0001.jpg)
+
+# Load packages
+
+```{r message=FALSE}
+library( "Seurat" )
+library( "scater" )
+
+library( "tidyverse" )
+```
+
+# Load data
+
+```{r}
+rds_url <- url( "https://www.sciserver.org/public-data/c-moor/data/retina.rds" )
+sce <- readRDS( rds_url )
+sce <- as.SingleCellExperiment( sce )
+```
+
+# Check data
+
+```{r}
+sce
+```
+
+# Visualize clusters
+
+```{r}
+plotUMAP( sce, colour_by="cell_type" )
+```
+
+# Document software
+
+<details>
+```{r}
+sessionInfo()
+```
+</details>
